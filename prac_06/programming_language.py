@@ -8,5 +8,10 @@ class ProgrammingLanguage:
         self.year = year
 
     def __str__(self):
-        """Return string representation of a programminglanguage"""
+        """Return string representation of a programming language"""
+        return " {}, {} typing , Reflection={}, First appeared in {}".format(self.name, self.typing, self.reflection,
+                                                                             self.year)
 
+    def is_dynamic(self):
+        """Determine if programming language is dynamically typed."""
+        return self.typing == "Dynamic"
