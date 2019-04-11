@@ -3,11 +3,11 @@ MINIMUM_LENGTH = 6
 
 def main():
     """Get password of valid size from user and print asterisks"""
-    print_password()
-
-
-def print_password():
     password = get_password()
+    print_password(password)
+
+
+def print_password(password):
     print('*' * len(password))
 
 
