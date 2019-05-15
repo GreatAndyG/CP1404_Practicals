@@ -2,15 +2,16 @@ BoxLayout:
     orientation: 'vertical'
 #    orientation: 'horizontal'
     Button:
+        id: clear_input_and_output
+        on_press: app.handle_clear()
         text: 'Clear'
     TextInput:
-        id:input_name
-        text:''
+        id: input_name
+        text: ''
     Button:
         text: 'Greet'
         on_press: app.handle_greet()
     Label:
         id: output_label
-        text: 'Enter your name'
+        text:'Enter you name'
         color: (1, 1, 0, 1)
-
