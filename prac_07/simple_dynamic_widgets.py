@@ -15,7 +15,7 @@ class SimpleDynamicWidgetsApp(App):
 
     def create_label(self):
         for name in self.names:
-            temp_label = Label(text=name, id=name)
+            temp_label = Label(text=str(name))
             self.root.ids.entries_box.add_widget(temp_label)
 
 
