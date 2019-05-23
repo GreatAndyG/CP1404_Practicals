@@ -1,6 +1,5 @@
 """ Taxi Simulator using classes Txi and Silver Serivce Taxi"""
 
-
 from prac_08.taxi import Taxi
 from prac_08.silver_service_taxi import SilverServiceTaxi
 
@@ -8,7 +7,6 @@ MENU = "q)uit, c)hoose, d)rive"
 
 
 def main():
-    current_taxi = None
     bill_total = 0
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2),
              SilverServiceTaxi("Hummer", 200, 4)]
@@ -18,7 +16,7 @@ def main():
     menu_choice = input(">>> ").lower()
     while menu_choice != "q":
         if menu_choice == "c":
-            print(" Taxis avaiable: ")
+            print(" Taxis available: ")
             display_taxis(taxis)
             taxi_choice = int(input("Choose taxi: "))
             current_taxi = taxis[taxi_choice]
@@ -31,9 +29,10 @@ def main():
 
             bill_total += trip_cost
         else:
-            print("Bill to date: ${:.2f}".format(bill_total))
-            print(MENU)
-            menu_choice = input(">>> ").lower()
+            print("Invalid option")
+        print("Bill to date: ${:.2f}".format(bill_total))
+        print(MENU)
+        menu_choice = input(">>> ").lower()
 
     print("Total trip cost : ${:.2f}".format(bill_total))
     print("Taxis are now: ")
@@ -42,7 +41,7 @@ def main():
 
 def display_taxis(taxis):
     for i, taxi in enumerate(taxis):
-        print("{} - {}".format(i, str(taxis)))
+        print("{} - {}".format(i, taxi))
 
 
 main()
